@@ -23,23 +23,23 @@ public class PT_RobotDrive extends RobotDrive {
 
 	public PT_RobotDrive(int leftMotorChannel, int rightMotorChannel) {
 		super(leftMotorChannel, rightMotorChannel);
-		// TODO Auto-generated constructor stub
+		// nothing new, just call superclass
 	}
 
 	public PT_RobotDrive(SpeedController leftMotor, SpeedController rightMotor) {
 		super(leftMotor, rightMotor);
-		// TODO Auto-generated constructor stub
+		// nothing new, just call superclass
 	}
 
 	public PT_RobotDrive(int frontLeftMotor, int rearLeftMotor, int frontRightMotor, int rearRightMotor) {
 		super(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
-		// TODO Auto-generated constructor stub
+		// nothing new, just call superclass
 	}
 
 	public PT_RobotDrive(SpeedController frontLeftMotor, SpeedController rearLeftMotor, SpeedController frontRightMotor,
 			SpeedController rearRightMotor) {
 		super(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
-		// TODO Auto-generated constructor stub
+		// nothing new, just call superclass
 	}
 
 }
