@@ -36,7 +36,9 @@ public class Robot extends IterativeRobot {
      * This function is called once when we go into the teleop mode
      */
     public void teleopInit(){
+    	//TODO: Change this to be YOUR team name
     	System.out.println("Team Name");  	
+    	System.out.println("--------------------------");
     }
     
     /**
