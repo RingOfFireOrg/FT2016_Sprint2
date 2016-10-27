@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team3459.robot;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -45,15 +46,15 @@ public class Robot extends IterativeRobot {
      */
     public void credits(){
     	//TODO: Change this to be YOUR team name
-    	System.out.println("Team Name");  	
-    	System.out.println("--------------------------");    	
+    	DriverStation.reportWarning("Put Yout Team Name Here", false);
+    	DriverStation.reportWarning("Team Name", false);  	
+    	DriverStation.reportWarning("--------------------------", false);    	
     }
     
     /**
      * This function is called once when we go into the teleop mode
      */
     public void teleopInit(){
-    	System.out.println("Entering Teleop...");
     	credits();
     }
     
@@ -86,7 +87,6 @@ public class Robot extends IterativeRobot {
      * This function is called once when we go into the Autonomous mode
      */
     public void autonomousInit(){
-    	System.out.println("Entering Autonomous...");
     	credits();    	
     }
 

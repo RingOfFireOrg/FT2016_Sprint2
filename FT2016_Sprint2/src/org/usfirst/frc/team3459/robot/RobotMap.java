@@ -11,7 +11,7 @@ public class RobotMap {
     public static int leftMotor = 0;
     public static int rightMotor = 1;
 //TODO: This should be renamed instead of sample to explain what it is doing    
-    public static int sampleServo = 1;
+    public static int sampleServo = 9;
  // for drive station ports
     public static int driverStationDriveStickLeft = 0;
     public static int driverStationDriveStickRight = 1;
