@@ -10,7 +10,10 @@ public class RobotMap {
 // No longer has to be backwards because now we are doing it in the "right" way 
     public static int leftMotor = 0;
     public static int rightMotor = 1;
+//TODO: This should be renamed instead of sample to explain what it is doing    
+    public static int sampleServo = 1;
  // for drive station ports
     public static int driverStationDriveStickLeft = 0;
     public static int driverStationDriveStickRight = 1;
+    public static int driverStationCommandStick = 2;
 }
