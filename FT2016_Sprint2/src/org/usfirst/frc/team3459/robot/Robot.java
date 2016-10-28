@@ -47,7 +47,6 @@ public class Robot extends IterativeRobot {
     public void credits(){
     	//TODO: Change this to be YOUR team name
     	DriverStation.reportWarning("Put Yout Team Name Here", false);
-    	DriverStation.reportWarning("Team Name", false);  	
     	DriverStation.reportWarning("--------------------------", false);    	
     }
     
