@@ -40,6 +40,5 @@ public class PT_RobotDrive extends RobotDrive {
 			SpeedController rearRightMotor) {
 		super(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 		// nothing new, just call superclass
-	}
-
+    }
 }
