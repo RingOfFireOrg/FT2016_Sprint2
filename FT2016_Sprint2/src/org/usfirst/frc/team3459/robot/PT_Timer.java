@@ -32,7 +32,7 @@ public class PT_Timer {
    * Get the number of seconds since start time
    */
   public double getSecs(){
-	  return (getMillis() / 1000);
+	  return (((double)getMillis()) / 1000);
   }
     
 }
