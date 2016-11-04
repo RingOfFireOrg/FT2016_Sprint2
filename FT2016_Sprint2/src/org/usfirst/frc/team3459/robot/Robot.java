@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3459.robot.RobotMap;
 import org.usfirst.frc.team3459.robot.PT_RobotDrive;
-import org.usfirst.frc.team3459.robot.PT_SampleServoMechanism;
+import org.usfirst.frc.team3459.robot.PT_Silverback_Tubes;
 import org.usfirst.frc.team3459.robot.PT_Timer;
 
 /**
@@ -20,12 +20,12 @@ public class Robot extends IterativeRobot {
 	 * Member variables go here 
 	 */
 	PT_RobotDrive driveTrain;
-	PT_SampleServoMechanism mechanism;
+	PT_Silverback_Tubes mechanism;
 	Joystick leftDriveStick;
 	Joystick rightDriveStick;
 	Joystick commandStick;
 	PT_Timer autonomousTimer;
-	
+	PT_Timer tubeTimer;
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -35,7 +35,7 @@ public class Robot extends IterativeRobot {
         driveTrain = new PT_RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
         // If we are using the robot where the front is the back
         driveTrain.setBackwards(true);
-        mechanism = new PT_SampleServoMechanism(RobotMap.sampleServo);
+        mechanism = new PT_Silverback_Tubes(RobotMap.sampleServo);
         
         autonomousTimer = new PT_Timer();
         
@@ -79,7 +79,7 @@ public class Robot extends IterativeRobot {
     	}
 
     	if(commandStick.getTrigger()){
-    		mechanism.open();
+    		mechanism.timedRelease(); 
     	}
     	else{
     		mechanism.close();
