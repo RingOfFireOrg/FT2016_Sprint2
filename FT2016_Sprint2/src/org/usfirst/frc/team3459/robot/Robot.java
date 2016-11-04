@@ -25,7 +25,6 @@ public class Robot extends IterativeRobot {
 	Joystick rightDriveStick;
 	Joystick commandStick;
 	PT_Timer autonomousTimer;
-	PT_Timer tubeTimer;
 	
     /**
      * This function is run when the robot is first started up and should be
