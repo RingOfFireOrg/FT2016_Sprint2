@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3459.robot.RobotMap;
 import org.usfirst.frc.team3459.robot.PT_RobotDrive;
 import org.usfirst.frc.team3459.robot.PT_SampleServoMechanism;
+import org.usfirst.frc.team3459.robot.PT_Timer;
 
 /**
  * Don't change the name of this or it won't work. (The manifest looks for "Robot")
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 	Joystick leftDriveStick;
 	Joystick rightDriveStick;
 	Joystick commandStick;
+	PT_Timer autonomousTimer;
 	
 	
     /**
@@ -34,6 +36,8 @@ public class Robot extends IterativeRobot {
         // If we are using the robot where the front is the back
         driveTrain.setBackwards(true);
         mechanism = new PT_SampleServoMechanism(RobotMap.sampleServo);
+        
+        autonomousTimer = new PT_Timer();
         
         // Setup driver station controls
         leftDriveStick = new Joystick(RobotMap.driverStationDriveStickLeft);
@@ -87,13 +91,24 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousInit(){
     	credits();    	
+    	autonomousTimer.reset();
     }
 
+    // this is the time since beginning of autonomous period
     /**
      * This function is called periodically during autonomous control (approx 20ms)
      */
     public void autonomousPeriodic() {
-    	//TODO: Put Autonomous code here.   Must finish within 20 ms
+    	double timeSecs = autonomousTimer.getSecs();
+    	
+    	// for the first second
+    	if(timeSecs < 1.0){
+    		driveTrain.tankDrive(0.5, 0.5);  // half speed - straight ahead
+    	}
+    	else{
+    		driveTrain.tankDrive(0, 0);   // stopped
+    	}
+    	
     }
 
     
