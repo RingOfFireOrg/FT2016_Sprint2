@@ -16,4 +16,7 @@ public class RobotMap {
     public static int driverStationDriveStickLeft = 0;
     public static int driverStationDriveStickRight = 1;
     public static int driverStationCommandStick = 2;
+    public static int s1 = 0;
+    public static int s2 = 1;
+    public static int trigger = 1;
 }
