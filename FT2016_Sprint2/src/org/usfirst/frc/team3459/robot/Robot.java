@@ -5,7 +5,8 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Solenoid;
 import org.usfirst.frc.team3459.robot.RobotMap;
 import org.usfirst.frc.team3459.robot.PT_RobotDrive;
 import org.usfirst.frc.team3459.robot.PT_SampleServoMechanism;
@@ -26,7 +27,7 @@ public class Robot extends IterativeRobot {
 	Joystick commandStick;
 	PT_Timer autonomousTimer;
 	
-	
+	DoubleSolenoid solenoid;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -39,6 +40,9 @@ public class Robot extends IterativeRobot {
         
         autonomousTimer = new PT_Timer();
         
+	solenoid = new DoubleSolenoid(0,1);
+
+
         // Setup driver station controls
         leftDriveStick = new Joystick(RobotMap.driverStationDriveStickLeft);
         rightDriveStick = new Joystick(RobotMap.driverStationDriveStickRight);
@@ -79,10 +83,10 @@ public class Robot extends IterativeRobot {
     	}
 
     	if(commandStick.getTrigger()){
-    		mechanism.open();
+    		solenoid.set(DoubleSolenoid.Value.kForward);
     	}
     	else{
-    		mechanism.close();
+    		solenoid.set(DoubleSolenoid.Value.kReverse);
     	}
     }
 
