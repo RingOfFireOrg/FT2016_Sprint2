@@ -111,12 +111,12 @@ public class Robot extends IterativeRobot {
 		double timeSecs = autonomousTimer.getSecs();
 
 		// for the first second
-		if (timeSecs < 2.0) {
-			driveTrain.tankDrive(0.5, 0.5); // half speed - straight ahead
+		if (timeSecs < 5.0) {
+			driveTrain.tankDrive(0.4, 0.4); // half speed - straight ahead
 		} else {
 			driveTrain.tankDrive(0, 0); // stopped
 		}
-		if (timeSecs > 5.0) {
+		if (timeSecs > 7.0) {
 //			solenoidOne.set(false);
 //			solenoidTwo.set(true);
 			solenoid.set(DoubleSolenoid.Value.kForward);
