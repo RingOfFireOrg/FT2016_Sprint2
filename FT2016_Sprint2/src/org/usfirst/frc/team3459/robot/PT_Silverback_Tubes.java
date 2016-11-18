@@ -14,6 +14,7 @@ public class PT_Silverback_Tubes extends Servo {
 
 	public PT_Silverback_Tubes(int channel) {
 		super(channel);
+		m_timer = new PT_Timer();
 		// Nothing else to do here
 	}
 	public void setState(state newState){
@@ -36,15 +37,15 @@ public class PT_Silverback_Tubes extends Servo {
 	}
 	
 	public void dumpBothTubes(){
-		set(1.0);
+		set(0.0);
 		m_state = state.BOTH_OPEN;
 	}
 	public void dumpFirstTube(){
-		set(0.5);
+		set(0.40);
 		m_state = state.FIRST_OPEN;
 	}
 	public void close(){
-		set(0.0);
+		set(0.95);
 		m_state = state.CLOSED;
 	}
 	
@@ -55,7 +56,7 @@ public class PT_Silverback_Tubes extends Servo {
 				dumpFirstTube();
 				break;
 			case FIRST_OPEN:
-				if(m_timer.getSecs() > 1.0){   // If the first one has been open for more than a second
+				if(m_timer.getSecs() > 1.5){   // If the first one has been open for more than a second
 					dumpBothTubes();
 				}
 				break;
