@@ -33,7 +33,8 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
         driveTrain = new PT_RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
         // If we are using the robot where the front is the back
-        driveTrain.setBackwards(true);
+        driveTrain.setBackwards(false);
+        
         mechanism = new PT_Silverback_Tubes(RobotMap.sampleServo);
         
         autonomousTimer = new PT_Timer();
@@ -101,13 +102,13 @@ public class Robot extends IterativeRobot {
     	double timeSecs = autonomousTimer.getSecs();
     	
     	// for the first four seconds
-    	if(timeSecs < 4.0){
+    	if(timeSecs < 3.0){
     		driveTrain.tankDrive(0.5, 0.5);  // half speed - straight ahead
     	}
     	else{
     		driveTrain.tankDrive(0, 0);   // stopped
     	}
-    	if(timeSecs > 6.0){
+    	if(timeSecs > 4.0){
     		mechanism.timedRelease();
     	}
     	
