@@ -100,12 +100,15 @@ public class Robot extends IterativeRobot {
     public void autonomousPeriodic() {
     	double timeSecs = autonomousTimer.getSecs();
     	
-    	// for the first second
-    	if(timeSecs < 1.0){
+    	// for the first four seconds
+    	if(timeSecs < 4.0){
     		driveTrain.tankDrive(0.5, 0.5);  // half speed - straight ahead
     	}
     	else{
     		driveTrain.tankDrive(0, 0);   // stopped
+    	}
+    	if(timeSecs > 6.0){
+    		mechanism.timedRelease();
     	}
     	
     }
